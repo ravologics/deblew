@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-img, .bg-img-rev:hover, .bg-img-rev:focus, .bg-img-rev-hover:hover, .bg-img-simple {
+    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.45) 50%, rgba(255, 255, 255, 0.1) 100%);
+    transition: all 0.5s ease-in-out;
+}
+.bg-img:hover, .bg-img-rev, .bg-img:focus, .bg-img-hover:hover, .bg-img-simple-rev {
+    background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.45) 100%);
+    transition: all 0.5s ease-in-out;
+}
+
+input[type="search"] {
+    border: none !important;
+    outline: none !important;
+    font-size: 16px;
+}
+
+/* Remove blue outline on focus */
+input[type="search"]:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+/* Style the entire scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+    background: #e0e0e0;
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: #001a12;
+    border-radius: 50px;
+    border: 2px solid #e0e0e0; /* Adds a border around the thumb */
+}
