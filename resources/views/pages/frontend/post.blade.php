@@ -13,7 +13,7 @@
 <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-2 lg:gap-4 mt-4 single-post">
     <div class="flex flex-col gap-5 w-full md:w-[66%] lg:w-[75%]">
         <article class="flex flex-col">
-            <img src="https://technicalthought.com/Demo/Jop-Site/wp-content/uploads/2025/04/cover.jpg" alt="" class="object-cover aspect-[16/9] rounded">
+            <img src="https://technicalthought.com/Demo/Jop-Site/wp-content/uploads/2025/04/cover.jpg" alt="" style="width: 100%; height: auto; object-fit: cover; aspect-ratio: 16 / 9;" class="rounded">
 
             <div class="w-[95%] mx-auto -mt-20 p-5 border border-gray-200 flex flex-col gap-5 rounded-lg bg-white">
                 <div class="flex flex-row items-center space-x-2">
@@ -69,6 +69,40 @@
 
         <!-- Related Posts Section -->
         @include('components.related-posts.related')
+
+        <div class="flex flex-col gap-5">
+            <h2 class="text-2xl font-bold text-white bg-greenish p-2 rounded bg-img-simple mt-5">Leave a Comment</h2>
+            <form class="flex flex-col gap-5">
+                <div class="flex flex-col gap-1">
+                    <label for="message" class="text-gray-700">Message</label>
+                    <textarea name="message" id="message" class="border border-gray-300 rounded p-2 h-[150px] focus:outline-none focus:ring-greenish"></textarea>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-3">
+                    <div class="flex flex-col gap-1 w-full">
+                        <label for="name" class="text-gray-700">Name</label>
+                        <input type="text" name="name" id="name" class="border border-gray-300 rounded p-2 focus:outline-none focus:ring-greenish">
+                    </div>
+
+                    <div class="flex flex-col gap-1 w-full">
+                        <label for="email" class="text-gray-700">Email</label>
+                        <input type="email" name="email" id="email" class="border border-gray-300 rounded p-2 focus:outline-none focus:ring-greenish">
+                    </div>
+
+                    <div class="flex flex-col gap-1 w-full">
+                        <label for="website" class="text-gray-700">Website</label>
+                        <input type="url" name="website" id="website" class="border border-gray-300 rounded p-2 focus:outline-none focus:ring-greenish">
+                    </div>
+                </div>
+
+                <div class="flex flex-row gap-2 items-center">
+                    <input type="checkbox">
+                    <span class="text-gray-700 text-sm">I agree to the <a href="" class="text-greenish">Terms and Conditions</a>, <a href="" class="text-greenish">Privacy Policy</a> and <a href="" class="text-greenish">Cookies Policy</a>.</span>
+                </div>
+
+                <button type="submit" class="bg-greenish text-white px-5 py-2 rounded-full bg-img-rev w-full max-w-fit">Submit</button>
+            </form>
+        </div>
     </div>
     
     @include('components.sidebar.sidebar')

@@ -23,9 +23,17 @@ Route::view('/job-post', 'pages.frontend.job-post')->name('job-post');
 Route::view('/job-category', 'pages.frontend.job-category')->name('job-category');
 Route::view('/other-posts', 'pages.frontend.other-posts')->name('other-posts');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {return view('pages.dashboard.dashboard');})->name('dashboard');
+    Route::get('/posts', function () {return view('pages.dashboard.posts');})->name('posts');
+    Route::get('/pages', function () {return view('pages.dashboard.pages');})->name('pages');
+    Route::get('/images', function () {return view('pages.dashboard.images');})->name('images');
+    Route::get('/comments', function () {return view('pages.dashboard.comments');})->name('comments');
+    Route::get('/form-submissions', function () {return view('pages.dashboard.contact');})->name('form-submissions');
+    Route::get('/users', function () {return view('pages.dashboard.users');})->name('users');
+    Route::get('/settings', function () {return view('pages.dashboard.settings');})->name('settings');
+    Route::get('/testing', function () {return view('pages.dashboard.testing');})->name('testing');
+//});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

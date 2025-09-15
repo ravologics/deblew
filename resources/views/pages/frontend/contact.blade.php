@@ -48,11 +48,18 @@
     <div class="right-side">
         <div class="topic-text text-greenish-900">Send us a message</div>
         <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
-        <form action="#">
-            <div class="input-box"><input type="text" placeholder="Enter your name"></div>
-            <div class="input-box"><input type="text" placeholder="Enter your email"></div>
-            <div class="input-box message-box"><textarea placeholder="Enter your message"></textarea></div>
-            <div class="button bg-greenish rounded-full bg-img"><input type="button" value="Send Now"></div>
+        <form action="#" class="flex flex-col gap-5 mt-5">
+            <div class="flex flex-col lg:flex-row gap-5">
+                <input type="text" placeholder="Enter your name" class="w-full p-2 border border-greenish rounded bg-gray-100">
+                <input type="text" placeholder="Enter your email" class="w-full p-2 border border-greenish rounded bg-gray-100">
+            </div>
+            <div class="flex flex-col lg:flex-row gap-5">
+                <input type="text" placeholder="Enter your phone number" class="w-full p-2 border border-greenish rounded bg-gray-100">
+                <input type="text" placeholder="Enter your subject" class="w-full p-2 border border-greenish rounded bg-gray-100">
+            </div>
+            <textarea placeholder="Enter your message" class="w-full p-2 border border-greenish rounded bg-gray-100 h-[150px]"></textarea>
+            <div class="g-recaptcha" data-sitekey="6LcuZMorAAAAAHpZHivIiUe9wHDrX7YdfVr_xKDw"></div>
+            <div class="bg-greenish rounded-full bg-img w-full max-w-fit text-white px-5 py-2"><input type="button" value="Send Now"></div>
         </form>
     </div>
 </section>
@@ -104,38 +111,6 @@
         font-size: 23px;
         font-weight: 600;
     }
-    .right-side .input-box{
-        height: 50px;
-        width: 100%;
-        margin: 12px 0;
-    }
-    .right-side .input-box input, .right-side .input-box textarea{
-        height: 100%;
-        width: 100%;
-        border: none;
-        outline: none;
-        font-size: 16px;
-        background: #F0F1F8;
-        border-radius: 6px;
-        padding: 0 15px;
-        resize: none;
-    }
-    .right-side .message-box{min-height: 110px;}
-    .right-side .input-box textarea{padding-top: 6px;}
-    .right-side .button{
-        display: inline-block;
-        margin-top: 12px;
-    }
-    .right-side .button input[type="button"]{
-        color: #fff;
-        font-size: 18px;
-        outline: none;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
     @media (max-width: 820px) {
         .left-side{
             width: 100%;
@@ -152,3 +127,8 @@
     }
 </style>
 @endpush
+
+@push('headerscripts')
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+@endpush
+

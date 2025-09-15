@@ -34,6 +34,7 @@ return new class extends Migration
             $table->string('social_media_profile_medium');
             $table->string('social_media_profile_tiktok');
             $table->string('social_media_profile_github');
+            $table->string('social_media_profile_youtube');
             // Address information
             $table->string('address');
             $table->string('suburb');

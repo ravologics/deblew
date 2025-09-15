@@ -9,7 +9,9 @@
     <meta name="robots" content="noindex, nofollow">
     
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('images/branding/Deblew-Favicon.png') }}" type="image/x-icon">
+    @if(file_exists(public_path('images/branding/Deblew-Favicon.png')))
+        <link rel="shortcut icon" href="{{ asset('images/branding/Deblew-Favicon.png') }}" type="image/x-icon">
+    @endif
     
     <!-- Styles & Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])

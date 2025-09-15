@@ -8,14 +8,26 @@
         </button>
         
         <!-- Logo -->
-        <a href="{{ route('home') }}"><img src="{{ asset('images/branding/Deblew-Logo-Light.png') }}" alt="Deblew Logo" class="w-[200px]"></a>
+        <a href="{{ route('home') }}">
+            @if(file_exists(public_path('images/branding/Deblew-Logo-Light.png')))
+                <img src="{{ asset('images/branding/Deblew-Logo-Light.png') }}" alt="Deblew Logo" class="w-[200px]">
+            @else
+                Deblew
+            @endif
+        </a>
 
         <!-- Navigation / Off-canvas container -->
         <div id="offCanvas" class="fixed inset-y-0 left-0 z-40 w-72 max-w-[80vw] bg-white transform -translate-x-full transition-transform duration-300 ease-out border-r border-gray-300 flex flex-col h-full lg:static lg:z-auto lg:w-auto lg:max-w-none lg:transform-none lg:translate-x-0 lg:bg-transparent lg:border-none">
             <!-- Off Canvas Header -->
             <div class="flex flex-row items-center justify-between w-full border-b border-gray-300 px-2 py-1 lg:hidden">
                 <!-- Logo -->
-                <a href="{{ route('home') }}"><img src="{{ asset('images/branding/Deblew-Logo-Light.png') }}" alt="Deblew Logo" class="w-[150px]"></a>
+                <a href="{{ route('home') }}">
+                    @if(file_exists(public_path('images/branding/Deblew-Logo-Light.png')))
+                        <img src="{{ asset('images/branding/Deblew-Logo-Light.png') }}" alt="Deblew Logo" class="w-[150px]">
+                    @else
+                        Deblew
+                    @endif
+                </a>
 
                 <!-- Close icon -->
                 <svg id="iconCloseOffCanvas" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 cursor-pointer bg-greenish bg-img-rev text-white rounded-full p-[2px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
